@@ -54,17 +54,25 @@ function habitAdd() {
     messageEl.textContent = "✔ Habit Added";
     messageEl.classList.remove("invalid");
     messageEl.classList.add("valid");
-    habits.push(inEl.value);
+    habits.push(inEl.value.trim());
     habitListAppend(inEl.value);
     inEl.value = "";
   }
 }
 
 function removeHabit(habitElement, habitArray) {
-  const index = habitArray.indexOf(habitElement.textContent);
+  const text = habitElement.firstChild.textContent.trim();
+
+  console.log("Habit to Remove:", text);
+  console.log("Habit Array:", habitArray);
+
+  const index = habitArray.indexOf(text);
 
   if (index > -1) {
     habitArray.splice(index, 1);
+    console.log("Updated Habit Array:", habitArray);
+  } else {
+    console.error("Habit not found in array:", text);
   }
 
   habitElement.remove();
