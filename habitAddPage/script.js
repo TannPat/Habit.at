@@ -2,6 +2,8 @@
 
 let newHabit = false;
 
+let habits = [];
+
 const sections = document.querySelectorAll("section");
 
 sections.forEach((section) => {
@@ -19,23 +21,26 @@ sections.forEach((section) => {
   });
 });
 
-function checkEmpty(str)
- {
-  if(str == "" || str == "null")
-  {
+function checkEmpty(str) {
+  if (str == "" || str == "null") {
     return true;
   }
-    return false;
+  return false;
 }
 
-function habitListAppend(tableContent)
-{
-  let newTD = document.createElement("li");
-  let ogTable = document.getElementById("habit-list-ul");
-  ogTable.appendChild(newTD);
-  newTD.textContent = tableContent;
-  newTD.classList.add("habit-li");
-  newTD.style.borderTop = "none";
+function habitListAppend(tableContent) {
+  let newLI = document.createElement("li");
+  let ogUL = document.getElementById("habit-list-ul");
+  ogUL.appendChild(newLI);
+  newLI.textContent = tableContent;
+  newLI.classList.add("habit-li");
+  const removeBTN = document.createElement("button");
+  removeBTN.textContent = "Remove";
+  newLI.appendChild(removeBTN);
+  removeBTN.addEventListener("click", () => {
+    removeHabit(newLI, habits);
+  });
+  newLI.style.borderTop = "none";
 }
 
 function habitAdd() {
@@ -45,14 +50,22 @@ function habitAdd() {
     messageEl.classList.remove("valid");
     messageEl.classList.add("invalid");
     messageEl.textContent = "Please Enter a Valid Habit";
-  }
-  else
-  {
+  } else {
     messageEl.textContent = "✔ Habit Added";
     messageEl.classList.remove("invalid");
     messageEl.classList.add("valid");
+    habits.push(inEl.value);
     habitListAppend(inEl.value);
     inEl.value = "";
   }
 }
 
+function removeHabit(habitElement, habitArray) {
+  const index = habitArray.indexOf(habitElement.textContent);
+
+  if (index > -1) {
+    habitArray.splice(index, 1);
+  }
+
+  habitElement.remove();
+}
