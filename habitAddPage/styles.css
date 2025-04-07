@@ -7,7 +7,8 @@
   background-size: cover;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -17,7 +18,8 @@ html, body {
   height: 100%;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -51,7 +53,11 @@ nav {
   border: black 1px solid;
   height: 8vh;
   width: 66%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.765), rgba(87, 87, 87, 0.765));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.765),
+    rgba(87, 87, 87, 0.765)
+  );
   border-radius: 30px;
   margin-top: 2vh;
   margin-bottom: 5vh;
@@ -87,12 +93,11 @@ section {
   cursor: pointer;
   background-color: rgba(244, 244, 244, 0.5);
   backdrop-filter: blur(5px);
-  margin: 1vh auto 1vh 0.5vw;
+  margin: 1.5vh auto 1.5vh 0.5vw;
 }
 
 .clicked {
-  transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  margin: 5vh auto;
+  margin: 3vh auto 3vh 0.5vw;
   background-color: rgba(238, 238, 238, 0.337);
   backdrop-filter: blur(8px);
   color: black;
@@ -101,11 +106,11 @@ section {
 }
 
 .clicked:hover {
-  transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   background-color: rgba(244, 244, 244, 0.5);
   backdrop-filter: blur(5px);
-  margin: 7vh auto;
+  margin: 3.8vh auto 3.8vh 0.5vw;
 }
 
 input[type="text"] {
@@ -151,5 +156,5 @@ button:hover {
 }
 
 footer {
-    height: 0;
+  height: 0;
 }
