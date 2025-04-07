@@ -1,6 +1,6 @@
 "use strict";
 
-let habits = [];
+let newHabit = false;
 
 const sections = document.querySelectorAll("section");
 
@@ -19,10 +19,6 @@ sections.forEach((section) => {
   });
 });
 
-function Alert() {
-  alert("Works");
-}
-
 function checkEmpty(str)
  {
   if(str == "" || str == "null")
@@ -30,6 +26,15 @@ function checkEmpty(str)
     return true;
   }
     return false;
+}
+
+function habitListAppend(tableContent)
+{
+  let newTD = document.createElement("li");
+  let ogTable = document.getElementById("habit-list-ul");
+  ogTable.appendChild(newTD);
+  newTD.textContent = tableContent;
+  newTD.classList.add("habit-li");
 }
 
 function habitAdd() {
@@ -45,10 +50,8 @@ function habitAdd() {
     messageEl.textContent = "✔ Habit Added";
     messageEl.classList.remove("invalid");
     messageEl.classList.add("valid");
-    habits.push(inEl.value);
+    habitListAppend(inEl.value);
+    inEl.value = "";
   }
-  console.log(habits);
-  inEl.value = "";
 }
-
 
