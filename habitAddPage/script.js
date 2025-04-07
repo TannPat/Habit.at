@@ -42,11 +42,13 @@ function habitAdd() {
   }
   else
   {
-    console.log("Habit Added");
     messageEl.textContent = "✔ Habit Added";
     messageEl.classList.remove("invalid");
     messageEl.classList.add("valid");
     habits.push(inEl.value);
   }
-  console.log(habits); 
+  console.log(habits);
+  inEl.value = "";
 }
+
+
