@@ -101,7 +101,7 @@ section {
   background-color: rgba(238, 238, 238, 0.337);
   backdrop-filter: blur(8px);
   color: black;
-  width: 90%;
+  width: calc(100% - 1.75vw);
   height: auto;
 }
 
@@ -153,6 +153,19 @@ button:hover {
 .invalid {
   color: red;
   text-shadow: 1px 1px maroon;
+}
+
+#habit-list-ul {
+  padding: 0%;
+}
+
+.habit-li {
+  list-style: none;
+  font-size: 1.5rem;
+  margin: auto;
+  border: 1px black solid;
+  background: linear-gradient(rgba(255, 255, 255, 0.474), rgba(255, 255, 255, 0.067), rgba(255, 255, 255, 0.474));
+  backdrop-filter: invert(1);
 }
 
 footer {

@@ -35,6 +35,7 @@ function habitListAppend(tableContent)
   ogTable.appendChild(newTD);
   newTD.textContent = tableContent;
   newTD.classList.add("habit-li");
+  newTD.style.borderTop = "none";
 }
 
 function habitAdd() {
