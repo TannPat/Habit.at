@@ -16,6 +16,7 @@ body {
   background-color: rgba(1, 1, 1, 0.422);
   backdrop-filter: sepia(30%) saturate(2.5);
   height: 100%;
+  width: 100%;
 }
 
 h1,
@@ -55,16 +56,46 @@ nav {
   width: 66%;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.765),
-    rgba(87, 87, 87, 0.765)
+    rgba(255, 255, 255, 0.555),
+    rgba(87, 87, 87, 0.555)
   );
+  backdrop-filter: blur(8px);
   border-radius: 30px;
   margin-top: 2vh;
   margin-bottom: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-link {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-el {
+  border-left: 2px black solid;
+  border-right: 2px black solid;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 
 main {
   padding-top: 20vh;
+  display: flex;
+}
+
+#sections-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  align-self: center;
 }
 
 #habit-input {
@@ -87,6 +118,7 @@ section {
   display: flex;
   align-items: center;
   flex-direction: column;
+  backdrop-filter: blur(8px);
 }
 
 .main-sections:hover {
@@ -99,9 +131,9 @@ section {
 .clicked {
   margin: 3vh auto 3vh 0.5vw;
   background-color: rgba(238, 238, 238, 0.337);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(20px);
   color: black;
-  width: calc(100% - 1.75vw);
+  width: 90vw;
   height: auto;
 }
 
@@ -109,7 +141,8 @@ section {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   background-color: rgba(244, 244, 244, 0.5);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(12px);
+  padding: 1vh 0.5vw;
   margin: 3.8vh auto 3.8vh 0.5vw;
 }
 
@@ -154,6 +187,7 @@ button:hover {
 .invalid {
   color: red;
   text-shadow: 1px 1px maroon;
+  font-size: 1.2rem;
 }
 
 #habit-list-ul {
@@ -173,12 +207,16 @@ button:hover {
     rgba(255, 255, 255, 0.067),
     rgba(255, 255, 255, 0.474)
   );
-  backdrop-filter: invert(1);
+  color: snow;
   width: 20vw;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#gap {
+  height: 10vh;
 }
 
 footer {
