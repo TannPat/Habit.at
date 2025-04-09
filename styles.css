@@ -1,7 +1,7 @@
 :root {
   box-sizing: border-box;
   color: #333;
-  background-image: url("/tempBG.jpg");
+  background-image: url("tempBG.jpg");
   background-repeat: no-repeat;
   /* background-position: ; */
   background-size: cover;
